@@ -1,0 +1,18 @@
+<div>
+    <select class="form-control" id="fromCurrency" #fromCurrency>
+      <option   *ngFor='let i of buttons' value={{i.value}} >{{i.id}}</option>
+    </select>
+
+    <input type='text' [(ngModel)]='outputCurrency'  >
+
+    <select class="form-control"  id="data" #data >
+      <option  *ngFor='let j of buttons' value={{j.value}} >{{j.id}}</option>
+    </select>
+
+     <button (click)="convert(fromCurrency.value,data.value)">Convert</button>
+</div>
+<div>
+  <h1>Output Currency</h1>
+  {{outputCurrency}}
+</div>
+<router-outlet></router-outlet>
